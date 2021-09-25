@@ -8,11 +8,10 @@ using UnityEngine.UI;
 public class DataSO : ScriptableObject
 {
     [SerializeField] int value = 0;
-    public event UnityAction<int> OnValueChanged;
+    public event UnityAction OnValueChanged;
 
     public void OnValueChange()
     {
-        value++;
-        OnValueChanged?.Invoke(value);
+        OnValueChanged?.Invoke();
     }
 }
