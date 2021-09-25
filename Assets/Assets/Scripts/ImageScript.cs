@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageFood : MonoBehaviour
+public class ImageScript : MonoBehaviour
 {
     [SerializeField] Image imageFood;
     [SerializeField] Sprite icon;
@@ -13,6 +13,7 @@ public class ImageFood : MonoBehaviour
     {
         channel.OnValueChanged += UpdateImage;
     }
+
     private void OnDisable()
     {
         channel.OnValueChanged -= UpdateImage;
