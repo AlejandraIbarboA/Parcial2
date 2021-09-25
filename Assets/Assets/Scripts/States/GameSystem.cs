@@ -6,15 +6,23 @@ using UnityEngine.UI;
 public class GameSystem : MonoBehaviour
 {
     [SerializeField] private Necesities necesidades;
-    //[SerializeField] private string stateString;
     [SerializeField] GameObject chargeBar;
 
     public Necesities Necesidades => necesidades;
     public GameObject ChargeBar => chargeBar;
 
-    //public string StateString { get => stateString; set => stateString = value; }
-
     private State currentState;
+
+    [SerializeField] AudioClip sportSound;
+    [SerializeField] AudioClip eatSound;
+    [SerializeField] AudioClip sleepSound;
+    private AudioSource sound;
+
+    public AudioClip SportSound => sportSound;
+    public AudioClip EatSound => eatSound;
+    public AudioClip SleepSound => sleepSound;
+
+    public AudioSource Sound => sound;
 
     public void SetState(State _state)
     {
@@ -24,20 +32,20 @@ public class GameSystem : MonoBehaviour
 
     private void Start()
     {
+        sound = GetComponent<AudioSource>();
         necesidades = necesidades.GetComponent<Necesities>();
+
         SetState(new IdleState(this));
     }
 
     public void OnFeedButton()
     {
-        //StateString = "food";
         SetState(new EatState(this));
         StartCoroutine(currentState.Eat());
     }
 
     public void OnSleepButton()
     {
-        //StateString = "energy";
         SetState(new SleepState(this));
         StartCoroutine(currentState.Sleep());
     }
