@@ -7,7 +7,6 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "ScriptableObjects/DataSO")]
 public class DataSO : ScriptableObject
 {
-    [SerializeField] int value = 0;
     public event UnityAction OnValueChanged;
 
     public void OnValueChange()

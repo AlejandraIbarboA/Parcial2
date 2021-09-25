@@ -14,7 +14,6 @@ public class Necesities : MonoBehaviour
     {
         try
         {
-
             if (foodORenergy == "food")
             {
                 foodActual += value;
