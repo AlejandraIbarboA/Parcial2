@@ -12,24 +12,5 @@ public class IdleState : State
     {
         Debug.Log("IDLE");
         yield return new WaitForSeconds(2f);
-        Creator();
-    }
-
-    private void Creator()
-    {
-        //if (gameSystem.StateString == "food")
-        //{
-        //    gameSystem.SetState(new EatState(gameSystem));
-        //}
-        //else if (gameSystem.StateString == "energy")
-        //{
-        //    gameSystem.SetState(new SleepState(gameSystem));
-        //}
-        //else
-        //{
-        //    gameSystem.SetState(new IdleState(gameSystem));
-        //}
-
-
     }
 }
